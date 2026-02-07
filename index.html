@@ -22,7 +22,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1>Welcome to Manvika's Practice Website</h1>
   <p>This site is used for GA4 and Google Tag Manager practice.</p>
 
-  <button id="cta-button">Click Me</button>
+ <!-- <button id="cta-button">Click Me</button> -->
+  <h2>Product: Blue T-Shirt</h2>
+<p>Price: $25</p>
+
+<button id="add-to-cart">Add to Cart</button>
+
+<script>
+  document.getElementById("add-to-cart").addEventListener("click", function() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: "add_to_cart",
+      ecommerce: {
+        currency: "USD",
+        value: 25,
+        items: [{
+          item_id: "SKU_001",
+          item_name: "Blue T-Shirt",
+          item_category: "Apparel",
+          price: 25,
+          quantity: 1
+        }]
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
