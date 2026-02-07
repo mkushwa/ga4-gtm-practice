@@ -67,6 +67,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 </script>
 
+<button id="purchase">Purchase</button>
+
+<script>
+  document.getElementById("purchase").addEventListener("click", function() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: "purchase",
+      ecommerce: {
+        transaction_id: "T12345",
+        currency: "USD",
+        value: 25,
+        tax: 2,
+        shipping: 5,
+        items: [{
+          item_id: "SKU_001",
+          item_name: "Blue T-Shirt",
+          item_category: "Apparel",
+          price: 25,
+          quantity: 1
+        }]
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
