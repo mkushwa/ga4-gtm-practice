@@ -26,10 +26,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <h2>Product: Blue T-Shirt</h2>
  <p>Price: $25</p>
   
-<button id="add-to-cart">Add to Cart</button>
+<!-- <button id="add-to-cart">Add to Cart</button> -->
+<button id="cta-button">Add to Cart</button>  
 
 
-<script>
+<!-- <script>
   document.getElementById("add-to-cart").addEventListener("click", function() {
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
@@ -47,7 +48,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
   });
-</script> 
+</script> -->
+
+<script>
+  document.getElementById("cta-button").addEventListener("click", function () {
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: "add_to_cart",
+    ecommerce: {
+      currency: "USD",
+      value: 25,
+      items: [{
+        item_id: "SKU_001",
+        item_name: "Blue T-Shirt",
+        price: 25,
+        quantity: 1
+      }]
+    }
+  });
+});
+
+</script>
 
 <script>
   window.dataLayer = window.dataLayer || [];
